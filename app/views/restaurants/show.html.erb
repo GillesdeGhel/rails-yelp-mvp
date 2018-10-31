@@ -1,0 +1,18 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-8 col-sm-offset-4'>
+      <h1> <%= @restaurant.name %> </h1>
+        <h4> Average rating : <%= @restaurant.average %>/5</h4>
+          <% @restaurant.reviews.each do |review| %>
+          <p>
+           <%= review.content %>
+           <%= review.rating %>/5
+           </p>
+         <% end  %>
+
+       <%= link_to 'review restaurant', new_restaurant_review_path(@restaurant), {class: 'btn btn-primary'} %>
+
+       <%= link_to 'back to the list', restaurants_path %>
+    </div>
+  </div>
+</div>
